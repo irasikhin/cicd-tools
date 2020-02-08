@@ -6,6 +6,7 @@ RUN pacman -Syu --noconfirm nodejs npm yarn openssh docker && \
     sudo -u aur yay -S --noconfirm gradle maven protobuf protoc-gen-grpc-web terraform packer nomad consul ammonite go && \
     yarn global add standard-version && \
     curl -L https://github.com/jrasell/levant/releases/download/0.2.8/linux-amd64-levant -o /usr/local/bin/levant && \
+    chmod +x /usr/local/bin/levant && \
     pacman -Sc && \
     sudo -u aur yay -Sc
 
