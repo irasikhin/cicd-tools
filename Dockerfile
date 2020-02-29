@@ -9,7 +9,8 @@ RUN pacman -Syu --noconfirm nodejs npm yarn openssh docker && \
     curl -L https://github.com/jrasell/levant/releases/download/0.2.8/linux-amd64-levant -o /usr/local/bin/levant && \
     chmod +x /usr/local/bin/levant && \
     sudo pacman --noconfirm -Sc && \
-    sudo -u aur yay --noconfirm -Sc
+    sudo -u aur yay --noconfirm -Sc && \
+    sudo yay --noconfirm -R go
 
 COPY entrypoint.sh /bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
