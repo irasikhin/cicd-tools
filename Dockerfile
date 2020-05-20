@@ -13,4 +13,5 @@ RUN pacman -Syu --noconfirm nodejs npm yarn openssh docker && \
     sudo -u aur yay --noconfirm -Sc
 
 COPY entrypoint.sh /bin/entrypoint.sh
+COPY daemon.json /etc/docker/daemon.json
 ENTRYPOINT ["entrypoint.sh"]
