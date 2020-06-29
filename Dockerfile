@@ -9,8 +9,10 @@ RUN sudo pacman -Syu --noconfirm nodejs npm yarn openssh docker && \
     curl -L https://github.com/jrasell/levant/releases/download/0.2.8/linux-amd64-levant -o /usr/local/bin/levant && \
     chmod +x /usr/local/bin/levant && \
     sudo pacman --noconfirm -Sc && \
-    sudo yay --noconfirm -R go && \
+    sudo yay --noconfirm -R go jdk && \
     sudo -u aur yay --noconfirm -Sc
+
+RUN sudo archlinux-java set java-14-jdk
 
 COPY entrypoint.sh /bin/entrypoint.sh
 COPY daemon.json /etc/docker/daemon.json
